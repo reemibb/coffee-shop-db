@@ -1,0 +1,15 @@
+[2025-06-23 17:26:03] Request: GET /coffee-php/orders.php?user_id=1
+[2025-06-23 17:26:03] Database connection established
+[2025-06-23 17:26:03] Fetching orders for user ID: 1
+[2025-06-23 17:26:03] User orders query executed
+[2025-06-23 17:26:03] Found 2 orders for user
+[2025-06-23 17:26:03] User orders data sent successfully
+[2025-06-23 17:26:04] Request: GET /coffee-php/orders.php?id=2
+[2025-06-23 17:26:04] Looking for order ID: 2
+[2025-06-23 17:26:04] Database connection established
+[2025-06-23 17:26:04] Fetching order ID: 2
+[2025-06-23 17:26:04] Order query executed
+[2025-06-23 17:26:04] Order found: {"id":2,"user_id":1,"total":"2.00","status":"pending","shipping_address":"{\"fullName\":\"Tia\",\"email\":\"tiaMsheik@gmail.com\",\"phone\":\"34765789\",\"address\":\"beirut\",\"city\":\"beirut\",\"zip\":\"0000\"}","payment_method":"Cash on Delivery","created_at":"2025-06-23 18:06:06","updated_at":"2025-06-23 18:06:06"}
+[2025-06-23 17:26:04] Shipping address parsed
+[2025-06-23 17:26:04] Fetching items for order ID: 2
+[2025-06-23 17:26:04] PDO Exception: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'p.imageUrl' in 'field list'
