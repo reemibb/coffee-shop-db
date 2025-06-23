@@ -1,12 +1,14 @@
 <?php
-// Headers
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
-header("Access-Control-Allow-Methods: POST");
+header("Access-Control-Allow-Methods: POST, OPTIONS");
 header("Access-Control-Max-Age: 3600");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
-
-// Include database and models
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    // Just exit with 200 OK status
+    http_response_code(200);
+    exit;
+}
 include_once 'database.php';
 include_once 'user.php';
 
@@ -82,6 +84,8 @@ if(!empty($data)) {
                     "message" => "User registered successfully"
                 ));
             } else {
+                // Log the error
+                error_log("User registration failed: " . print_r($db->errorInfo(), true));
                 http_response_code(500);
                 echo json_encode(array(
                     "success" => false,
