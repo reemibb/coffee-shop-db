@@ -39,6 +39,11 @@ try {
     
     $products = array();
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+        // Make sure we have the expected imageUrl property
+        // Assuming your database column is named image_url
+        if (isset($row['image_url']) && !isset($row['imageUrl'])) {
+            $row['imageUrl'] = $row['image_url'];
+        }
         $products[] = $row;
     }
     
