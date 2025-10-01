@@ -1,6 +1,6 @@
 ## About 
 
-Local database for coffee-shop-web repository, using xampp and php.
+Local database for [coffee-shop-web](https://github.com/reemibb/coffee-shop-web), using xampp and php.
 
 ## License
 
